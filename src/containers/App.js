@@ -1,10 +1,14 @@
 import React from 'react';
+import BurgerBuilder from '../components/burgerBuilder/BurgerBuilder.jsx';
+import Layout from '../components/layout/Layout.jsx'
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Layout>
+        <BurgerBuilder />
+      </Layout>
+    </>
   )
 }
 
