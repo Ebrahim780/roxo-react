@@ -1,13 +1,12 @@
 import React from 'react';
 import Aux from '../../hoc/Auxx';
+import Toolbar from '../navigation/toolbar/Toolbar';
 import classes from './Layout.module.css';
 
 const Layout = (porps) => {
   return (
     <Aux>
-      <div>
-        Toolbar, side drawer, backdrop
-      </div>
+      <Toolbar />
       <main className={classes.Content}>
         {porps.children}
       </main>
