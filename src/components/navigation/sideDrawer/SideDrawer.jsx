@@ -3,7 +3,7 @@ import Logo from '../../logo/Logo';
 import NavigationItems from '../toolbar/navigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import BackDrop from '../../UI/backDrop/BackDrop';
-import Aux from '../../../hoc/Auxx';
+import Aux from '../../../hoc/Auxx/Auxx';
 
 const SideDrawer = (props) => {
 

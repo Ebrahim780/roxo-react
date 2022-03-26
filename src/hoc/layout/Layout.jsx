@@ -1,4 +1,4 @@
-import Aux from '../Auxx';
+import Aux from '../Auxx/Auxx';
 import SideDrawer from '../../components/navigation/sideDrawer/SideDrawer';
 import Toolbar from '../../components/navigation/toolbar/Toolbar';
 import classes from './Layout.module.css';
