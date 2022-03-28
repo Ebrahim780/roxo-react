@@ -1,12 +1,14 @@
 import React from 'react';
-import Blog from './blog/Blog';
-import { BrowserRouter } from 'react-router-dom';
+import BurgerBuilder from './burgerBuilder/BurgerBuilder.jsx';
+import Layout from '../hoc/layout/Layout.jsx'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Blog />
-    </BrowserRouter>
+    <>
+      <Layout>
+        <BurgerBuilder />
+      </Layout>
+    </>
   )
 }
 
