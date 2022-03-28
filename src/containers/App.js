@@ -1,9 +1,12 @@
 import React from 'react';
 import Blog from './blog/Blog';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (
-    <Blog/>
+    <BrowserRouter>
+      <Blog />
+    </BrowserRouter>
   )
 }
 
