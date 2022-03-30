@@ -12,21 +12,19 @@ const WithErrorHndler = (WrappedComponent, axios) => {
       this.setState({ error: null })
     }
 
-    componentWillMount() {
-      axios.interceptors.request.use(requestInterceptor => {
-        this.setState({ error: null })
-        return requestInterceptor
-      })
+    // UNSAFE_componentWillMount() {
+    //   axios.interceptors.request.use(requestInterceptor => {
+    //     this.setState({ error: null })
+    //     return requestInterceptor
+    //   })
 
-      axios.interceptors.response.use(responseInterceptor => responseInterceptor, error => {
-        this.setState({ error: error })
-      })
-    }
+    //   axios.interceptors.response.use(responseInterceptor => responseInterceptor, error => {
+    //     this.setState({ error: error })
+    //   })
 
-    componentWillUnmount() {
-      axios.interceptors.request.eject(this.requestInterceptor)
-      axios.interceptors.response.eject(this.responseInterceptor)
-    }
+    //   axios.interceptors.request.eject(this.requestInterceptor)
+    //   axios.interceptors.response.eject(this.responseInterceptor)
+    // }
 
     render() {
       return (
