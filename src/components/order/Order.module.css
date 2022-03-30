@@ -6,3 +6,12 @@
   margin: 10px auto;
   box-sizing: border-box;
 }
+
+.OrderDetail {
+  text-transform: capitalize;
+  display: inline-block;
+  margin: 0 5px 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+}
