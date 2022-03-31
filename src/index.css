@@ -3,3 +3,10 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
+.App {
+  text-align: center;
+}
+
+button , li {
+  cursor: pointer;
+}

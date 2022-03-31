@@ -1,41 +1,49 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
 class Counter extends Component {
-    state = {
-        counter: 0
-    }
-
-    counterChangedHandler = (action, value) => {
-        switch (action) {
-            case 'inc':
-                this.setState((prevState) => { return { counter: prevState.counter + 1 } })
-                break;
-            case 'dec':
-                this.setState((prevState) => { return { counter: prevState.counter - 1 } })
-                break;
-            case 'add':
-                this.setState((prevState) => { return { counter: prevState.counter + value } })
-                break;
-            case 'sub':
-                this.setState((prevState) => { return { counter: prevState.counter - value } })
-                break;
-        }
-    }
 
     render() {
         return (
             <div>
-                <CounterOutput value={this.state.counter} />
-                <CounterControl label="Increment" clicked={() => this.counterChangedHandler('inc')} />
-                <CounterControl label="Decrement" clicked={() => this.counterChangedHandler('dec')} />
-                <CounterControl label="Add 5" clicked={() => this.counterChangedHandler('add', 5)} />
-                <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler('sub', 5)} />
+                <CounterOutput value={this.props.counter} />
+                <CounterControl label="Increment" clicked={this.props.incrementCounter} />
+                <CounterControl label="Decrement" clicked={this.props.decrementCounter} />
+                <CounterControl label="Add 10" clicked={this.props.addFive} />
+                <CounterControl label="Subtract 15" clicked={this.props.substractFive} />
+                <hr />
+                <button onClick={this.props.StoreResult}>Store Result</button>
+                <ul>
+                    {this.props.results.map(result => (
+                        <li key={result.id}
+                            onClick={() => this.props.DeleteResult(result.id)}>
+                            {result.value}
+                        </li>
+                    ))}
+                </ul>
             </div>
-        );
+        )
     }
 }
 
-export default Counter;
+const mapStateToProps = state => {
+    return {
+        counter: state.counter,
+        results: state.results
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        incrementCounter: () => dispatch({ type: 'INCREMENT' }),
+        decrementCounter: () => dispatch({ type: 'DECREMENT' }),
+        addFive: () => dispatch({ type: 'ADD', value: 10 }),
+        substractFive: () => dispatch({ type: 'SUBSTRACT', value: 15 }),
+        StoreResult: () => dispatch({ type: 'STORE_RESULT' }),
+        DeleteResult: id => dispatch({ type: 'DELETE_RESULT', id })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
