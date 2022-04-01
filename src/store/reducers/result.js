@@ -1,12 +1,11 @@
 import { v4 as uuid } from 'uuid';
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
   results: []
 }
 
 const reducer = (state = initialState, action) => {
-
   switch (action.type) {
     case actionTypes.STORE_RESULT:
       return {
