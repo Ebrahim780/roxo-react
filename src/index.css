@@ -1,15 +1,12 @@
 body {
+  margin: 0;
   padding: 0;
-  margin: 10 auto;
+  font-family: Arial, sans-serif;
+}
+.App {
   text-align: center;
-  font-family: "Open Sans" sans-serif;
 }
 
-button {
+button , li {
   cursor: pointer;
-  margin-top: 10px;
-}
-
-a {
-  text-decoration: none;
 }
