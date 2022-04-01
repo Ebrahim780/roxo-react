@@ -6,24 +6,12 @@ import Modal from '../../components/UI/modal/Modal';
 import OrderSummary from '../../components/burger/orderSummary/OrderSummary';
 import Spinner from '../../components/UI/spinner/Spinner';
 import WithErrorHandler from '../../hoc/withErrorHandler/WithErrorHndler';
-import axios from '../../axios-orders';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../store/actions';
 
 class BurgerBuilder extends Component {
   state = {
-    purchasing: false,
-    error: false
-  }
-
-  componentDidMount() {
-    axios.get('ingredients.json')
-      .then(response => {
-        this.setState({ ingredients: response.data })
-      })
-      .catch(error => {
-        this.setState({ error: true })
-      })
+    purchasing: false
   }
 
   purchaseHandler = () => {
@@ -55,7 +43,7 @@ class BurgerBuilder extends Component {
     }
 
     let orderSummary = null;
-    let burger = this.state.error ? <p>Ingredient can't be loaded!</p> : <Spinner />
+    let burger = this.props.errorReducer ? <p>Ingredient can't be loaded!</p> : <Spinner />
 
     if (this.props.ingsReducer) {
       burger = (
@@ -92,14 +80,15 @@ const mapStateToProps = state => {
   return {
     ingsReducer: state.ingredients,
     priceReducer: state.totalPrice,
+    errorReducer: state.error
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingName => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName: ingName }),
-    onIngredientRemoved: ingName => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
+    onIngredientAdded: ingName => dispatch(actionTypes.addIngredient(ingName)),
+    onIngredientRemoved: ingName => dispatch(actionTypes.removeIngredient(ingName))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WithErrorHandler(BurgerBuilder, axios))
+export default connect(mapStateToProps, mapDispatchToProps)(WithErrorHandler(BurgerBuilder))
