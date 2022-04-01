@@ -18,7 +18,7 @@ class CheckOut extends Component {
     return (
       <div>
         <CheckoutSummary
-          ingredients={this.props.ings}
+          ingredients={this.props.ingsReducer}
           checkoutCancelled={this.checkoutCancelled}
           checkoutContinued={this.checkoutContinued}
         />
