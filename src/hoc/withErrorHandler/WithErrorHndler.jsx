@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from '../../components/UI/modal/Modal';
 import Aux from '../Auxx/Auxx';
 
-const WithErrorHndler = (WrappedComponent, axios) => {
+const WithErrorHndler = (WrappedComponent) => {
   return class extends Component {
     state = {
       error: null
@@ -11,20 +11,6 @@ const WithErrorHndler = (WrappedComponent, axios) => {
     errorConfirmedHandler = () => {
       this.setState({ error: null })
     }
-
-    // UNSAFE_componentWillMount() {
-    //   axios.interceptors.request.use(requestInterceptor => {
-    //     this.setState({ error: null })
-    //     return requestInterceptor
-    //   })
-
-    //   axios.interceptors.response.use(responseInterceptor => responseInterceptor, error => {
-    //     this.setState({ error: error })
-    //   })
-
-    //   axios.interceptors.request.eject(this.requestInterceptor)
-    //   axios.interceptors.response.eject(this.responseInterceptor)
-    // }
 
     render() {
       return (
