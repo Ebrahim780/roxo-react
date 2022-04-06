@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { AuthContext } from '../contexts/AuthContext';
 import Card from './UI/Card';
 import './Auth.css';
 
 const Auth = props => {
-  const loginHandler = () => {};
+  const authContext = useContext(AuthContext)
+
+  const loginHandler = () => {
+    authContext.login()
+  }
 
   return (
     <div className="auth">
@@ -14,7 +19,7 @@ const Auth = props => {
         <button onClick={loginHandler}>Log In</button>
       </Card>
     </div>
-  );
-};
+  )
+}
 
 export default Auth;
