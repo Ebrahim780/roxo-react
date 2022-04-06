@@ -8,9 +8,10 @@ const IngredientList = props => {
       <h2>Loaded Ingredients</h2>
       <ul>
         {props.ingredients.map(ig => (
-          <li key={ig.id} onClick={props.removeItem.bind(this, ig.id)}>
+          <li key={ig.id}>
             <span>{ig.title}</span>
             <span>{ig.amount}x</span>
+            <span className='delete' onClick={props.removeItem.bind(this, ig.id)}>DELETE</span>
           </li>
         ))}
       </ul>

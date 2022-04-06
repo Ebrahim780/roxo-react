@@ -22,3 +22,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.delete:hover {
+  cursor: pointer;
+  color: #ff2058;
+}
