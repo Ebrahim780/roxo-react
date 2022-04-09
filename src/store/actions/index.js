@@ -1,11 +1,2 @@
-export {
-  addIngredient,
-  removeIngredient,
-  initIngredients
-} from './burgerBuilder';
-
-export {
-  purchaseBurger,
-  purchaseInit,
-  fetchOrders
-} from './orders';
+export { add, substract, increment, decrement } from './counter';
+export { deleteResult, storeResult } from './result';
