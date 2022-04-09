@@ -9,7 +9,6 @@ import withErrorHandler from '../../../hoc/withErrorHandler/WithErrorHndler';
 import * as actions from '../../../store/actions'
 
 class ContactData extends Component {
-
   state = {
     orderForm: {
       name: {

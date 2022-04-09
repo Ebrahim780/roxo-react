@@ -5,7 +5,6 @@ import ContactData from './contactData/ContactData';
 import { connect } from 'react-redux';
 
 class CheckOut extends Component {
-
   checkoutCancelled = () => {
     this.props.history.goBack()
   }
@@ -15,7 +14,6 @@ class CheckOut extends Component {
   }
 
   render() {
-
     let summary = <Redirect to='/' />;
 
     if (this.props.ingsReducer) {

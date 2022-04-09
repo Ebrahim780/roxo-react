@@ -1,12 +1,11 @@
-import Aux from '../Auxx/Auxx';
+import React, { Component } from 'react';
 import SideDrawer from '../../components/navigation/sideDrawer/SideDrawer';
 import Toolbar from '../../components/navigation/toolbar/Toolbar';
 import classes from './Layout.module.css';
+import Aux from '../Auxx/Auxx';
 
-import React, { Component } from 'react';
 
 class Layout extends Component {
-
   state = {
     showSideDrawer: false
   }
@@ -20,7 +19,6 @@ class Layout extends Component {
       return { showSideDrawer: !prevState.showSideDrawer };
     })
   }
-
 
   render() {
     return (
