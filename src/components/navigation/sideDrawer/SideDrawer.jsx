@@ -6,7 +6,6 @@ import BackDrop from '../../UI/backDrop/BackDrop';
 import Aux from '../../../hoc/Auxx/Auxx';
 
 const SideDrawer = (props) => {
-
   let attachedClasses = [classes.SideDrawer, classes.Close]
 
   if (props.open)
