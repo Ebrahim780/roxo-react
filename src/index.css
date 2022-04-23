@@ -1,15 +1,93 @@
-body {
+* {
   padding: 0;
-  margin: 10 auto;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('./image/sky.jpg');
+  background-repeat: round;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 2rem;
   text-align: center;
-  font-family: "Open Sans" sans-serif;
+  font-size: 6rem;
+  color: whitesmoke;
 }
 
-button {
+.board {
+  border: 10px solid black;
+  background: black;
+  width: 450px;
+  height: 450px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.squares {
+  background: rgb(71, 3, 68);
+  border: none;
+  font-size: 5rem;
   cursor: pointer;
-  margin-top: 10px;
+  outline: none;
 }
 
-a {
-  text-decoration: none;
+
+button:hover {
+  background: rgba(143, 6, 136, 0.836);
+}
+
+.X {
+  color: greenyellow;
+}
+
+.O {
+  color: rgb(255, 0, 64);
+}
+
+.info-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+h3 {
+  padding: 1rem;
+  color: rgb(255, 217, 0);
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+.info-wrapper button {
+  background: #272727;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.7rem;
+  margin: 0.5rem 1rem;
+  font-size: large;
+}
+
+.info-wrapper button:hover {
+  opacity: 0.9;
+}
+
+
+.sweet-alert {
+  background-color: #2f2f2f96;
 }
