@@ -4,12 +4,25 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  background-color: #ff7cc2;
+  box-shadow: 0 0 5px inset #aa005bde;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8f0688d5;
+  border-radius: 10px;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-image: url('./image/sky.jpg');
   background-repeat: round;
   display: flex;
   justify-content: center;
+  user-select: none;
   min-height: 100vh;
   padding: 2rem;
 }
