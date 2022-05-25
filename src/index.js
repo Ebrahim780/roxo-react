@@ -1,28 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './containers/App';
-import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import burgerBuilderReducer from './store/reducers/burgerBuilder';
-import orderReducer from './store/reducers/orders';
-import thunk from 'redux-thunk';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const rootReducer = combineReducers({
-  burgerBuilder: burgerBuilderReducer,
-  order: orderReducer
-})
-
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
-
-ReactDOM.render(
-  <Provider store={store}>
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
 
-registerServiceWorker()
+reportWebVitals()
