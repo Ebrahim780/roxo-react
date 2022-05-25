@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const api = {
   key: "889136a1aaee7e892f68c83719dac306",
@@ -32,7 +30,7 @@ const App = () => {
           setQuery('')
         })
         .catch(error => {
-          toast.warn('Error to get data: ', error.message)
+          console.log('Error to get data: ', error.message)
         })
     }
   }
@@ -63,7 +61,6 @@ const App = () => {
             <div className="weather">{weather.weather[0].main}</div>
           </div>
         </> : null}
-        <ToastContainer />
       </main>
     </div>
   )
